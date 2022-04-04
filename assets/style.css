@@ -1,0 +1,33 @@
+/* body{
+    display: flex; 
+} */
+/* 
+.search{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+} */
+
+.header-card{
+    background-color: blue;
+    color: white; 
+    padding: 10 vh; 
+    line-height: 2.5;
+
+}
+
+.card-title{
+    line-height: 2.5; 
+    align-items: center;
+}
+
+.card{
+    background-color: #708090;
+    border-radius: 25px;
+    color: white; 
+    flex-direction: column;
+}
+
+.current-city{
+    border: solid 1px; 
+}

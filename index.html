@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Sarah's Cool (haha) Weather App</title>
 </head>
 <body>
-    <!--Need to create a header with the title-->
+    <!--Header with the title-->
+    <div >
+        <div class="header-card">
+          <h1 class="card-title">Weather Dashboard</h1>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+
     <!--Breaking down the main areas on the page: left bar, current city display, five day forecast-->
     <!--Left search panel-->
     <div class="search-panel">
-
+        <div class="search">
+            <h1> Search for a city</h1>
+            <input type="text" class="search-bar">
+            <button>Search</button>
+        </div>
     </div>
 
     <!--Chosen city's current weather-->
@@ -21,8 +33,62 @@
     </div>
 
     <!--Five day forecast-->
-    <div class="card">
+    <div class="five-day hide">
+        <h3>Five-day Forecast</h3>
+        <div class="cards">
+    <!--Pulling cards in from bootstrap-->
 
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">Date: </h5>
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <p class="card-text">Temp: </p>
+            <p class="card-text">Wind: </p>
+            <p class="card-text">Humidity: </p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Date: </h5>
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <p class="card-text">Temp: </p>
+                <p class="card-text">Wind: </p>
+                <p class="card-text">Humidity: </p>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Date: </h5>
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <p class="card-text">Temp: </p>
+                <p class="card-text">Wind: </p>
+                <p class="card-text">Humidity: </p>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Date: </h5>
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <p class="card-text">Temp: </p>
+                <p class="card-text">Wind: </p>
+                <p class="card-text">Humidity: </p>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Date: </h5>
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <p class="card-text">Temp: </p>
+                <p class="card-text">Wind: </p>
+                <p class="card-text">Humidity: </p>
+            </div>
+          </div>
+
+        </div>
     </div>
     
     <script src="./assets/script.js"></script>
