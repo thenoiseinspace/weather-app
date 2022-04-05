@@ -17,40 +17,52 @@
         </div>
       </div>
 
-    <!--Breaking down the main areas on the page: left bar, current city display, five day forecast-->
-    <!--Left search panel-->
-    <!-- <div class="search-panel">
-        <div class="search">
-            <h1> Search for a city</h1>
-            <input type="text" class="search-bar">
-            <button>Search</button>
+    <!--Breaking down the main areas on the page: left search bar, previous searches, current city display, five day forecast-->
+    <!--Starting from the top left and moving across in a grid: first row has search and current city, second row has previous searches and five-day-->
+
+
+    <div class="row">
+        <!--Search bar-->
+        <div class="col-sm-2 search-panel">
+            <div class="search">
+                <h1> Search for a city:</h1>
+                <input type="text" class="search-button">
+                <button type="button" class="btn btn-primary">Search</button>
+            </div>
         </div>
-    </div> -->
+        <!--Current city-->
+        <div class="col-md-10">
+            <div class="current-city" id="current-city">
+                <h1>The weather is: </h1>
+        
+            </div>
+        </div>
+      </div>
 
     <!--Chosen city's current weather-->
-    <div class="current-city">
+    <!-- <div class="current-city" id="current-city">
+        <h1>The weather is: </h1>
 
-    </div>
+    </div> -->
 
 <!--Search panel in column on the left-->
     <div class="row">
-        <div class="col-sm-4 search-panel">
-            <div class="search">
-                <h1> Search for a city</h1>
-                <input type="text" class="search-bar">
-                <button>Search</button>
+        <div class="col-sm-2 search-panel">
+            <div class="previous-search">
+                <h3> Your previously searched cities:</h3>
+                <p></p>
             </div>
         </div>
         
         
   <!--Five day forecast on the right-->       
-        <div class="col-sm-8 five-day">
+        <div class="col-sm-10 five-day">
             <div class="five-day hide">
-                <h3>Five-day Forecast</h3>
+                <h3>Five-day Forecast:</h3>
                 <div class="cards">
             <!--Pulling cards in from bootstrap-->
         
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 15rem;">
                     <div class="card-body">
                     <h5 class="card-title">Date: </h5>
                     <img class="card-img-top" src="..." alt="Card image cap">
@@ -60,7 +72,7 @@
                     </div>
                 </div>
         
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 15rem;">
                     <div class="card-body">
                         <h5 class="card-title">Date: </h5>
                         <img class="card-img-top" src="..." alt="Card image cap">
@@ -70,7 +82,7 @@
                     </div>
                   </div>
         
-                  <div class="card" style="width: 18rem;">
+                  <div class="card" style="width: 15rem;">
                     <div class="card-body">
                         <h5 class="card-title">Date: </h5>
                         <img class="card-img-top" src="..." alt="Card image cap">
@@ -80,7 +92,7 @@
                     </div>
                   </div>
         
-                  <div class="card" style="width: 18rem;">
+                  <div class="card" style="width: 15rem;">
                     <div class="card-body">
                         <h5 class="card-title">Date: </h5>
                         <img class="card-img-top" src="..." alt="Card image cap">
@@ -90,7 +102,7 @@
                     </div>
                   </div>
         
-                  <div class="card" style="width: 18rem;">
+                  <div class="card" style="width: 15rem;">
                     <div class="card-body">
                         <h5 class="card-title">Date: </h5>
                         <img class="card-img-top" src="..." alt="Card image cap">

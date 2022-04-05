@@ -23,12 +23,11 @@
 }
 
 .card{
-    background-color: #708090;
+    background-color: #233954;
     border-radius: 25px;
     color: white; 
-    flex-direction: row; 
-    display: flex;
-    align-items: flex-start;
+    display: inline-block;
+    padding: 5px; 
 }
 
 .current-city{
