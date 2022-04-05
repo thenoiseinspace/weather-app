@@ -9,10 +9,11 @@
 } */
 
 .header-card{
-    background-color: blue;
+    background-image: linear-gradient(to right, blue,purple);
     color: white; 
     padding: 10 vh; 
     line-height: 2.5;
+    text-align: center;
 
 }
 
@@ -25,7 +26,9 @@
     background-color: #708090;
     border-radius: 25px;
     color: white; 
-    flex-direction: column;
+    flex-direction: row; 
+    display: flex;
+    align-items: flex-start;
 }
 
 .current-city{
