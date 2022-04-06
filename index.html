@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Sarah's Cool (haha) Weather App</title>
 </head>
 <body>
@@ -26,15 +27,20 @@
         <div class="col-sm-2 search-panel">
             <div class="search">
                 <h1> Search for a city:</h1>
-                <input type="text" class="search-button">
-                <button type="button" class="btn btn-primary">Search</button>
+                <input type="text" id="search-city" class="search-city">
+                <button type="button" id="search-button" class="btn btn-primary">Search</button>
             </div>
         </div>
         <!--Current city-->
         <div class="col-md-10">
             <div class="current-city" id="current-city">
-                <h1>The weather is: </h1>
-        
+                <h1>The weather for: </h1>
+                <ul>
+                <li id="main-temp">Temp:</li>
+                <li id="main-wind">Wind:</li>
+                <li id="main-humidity">Humidity:</li>
+                <li id="main-uv">UV index:</li>
+            </ul>
             </div>
         </div>
       </div>
@@ -65,50 +71,50 @@
                 <div class="card" style="width: 15rem;">
                     <div class="card-body">
                     <h5 class="card-title">Date: </h5>
-                    <img class="card-img-top" src="..." alt="Card image cap">
                     <p class="card-text">Temp: </p>
                     <p class="card-text">Wind: </p>
                     <p class="card-text">Humidity: </p>
+                    <p class="card-text">UV: </p>
                     </div>
                 </div>
         
                 <div class="card" style="width: 15rem;">
                     <div class="card-body">
                         <h5 class="card-title">Date: </h5>
-                        <img class="card-img-top" src="..." alt="Card image cap">
                         <p class="card-text">Temp: </p>
                         <p class="card-text">Wind: </p>
                         <p class="card-text">Humidity: </p>
+                        <p class="card-text">UV: </p>
                     </div>
                   </div>
         
                   <div class="card" style="width: 15rem;">
                     <div class="card-body">
                         <h5 class="card-title">Date: </h5>
-                        <img class="card-img-top" src="..." alt="Card image cap">
                         <p class="card-text">Temp: </p>
                         <p class="card-text">Wind: </p>
                         <p class="card-text">Humidity: </p>
+                        <p class="card-text">UV: </p>
                     </div>
                   </div>
         
                   <div class="card" style="width: 15rem;">
                     <div class="card-body">
                         <h5 class="card-title">Date: </h5>
-                        <img class="card-img-top" src="..." alt="Card image cap">
                         <p class="card-text">Temp: </p>
                         <p class="card-text">Wind: </p>
                         <p class="card-text">Humidity: </p>
+                        <p class="card-text">UV: </p>
                     </div>
                   </div>
         
                   <div class="card" style="width: 15rem;">
                     <div class="card-body">
                         <h5 class="card-title">Date: </h5>
-                        <img class="card-img-top" src="..." alt="Card image cap">
                         <p class="card-text">Temp: </p>
                         <p class="card-text">Wind: </p>
                         <p class="card-text">Humidity: </p>
+                        <p class="card-text">UV: </p>
                     </div>
                   </div>
         
@@ -118,6 +124,9 @@
         </div>
       </div>
     
+        <!-- Pulling in external libraries  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/script.js"></script>
 </body>
 </html>
