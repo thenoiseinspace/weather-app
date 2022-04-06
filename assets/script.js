@@ -1,3 +1,7 @@
+//Hello and welcome to my code that does not work! :D I took as much of Travis' time in office hours as I could--it still doesn't work! :D I worked on this with my tutor--it still doesn't work! :D I spent countless hours working on this with the study group, who tried valiently to fix it--it still doesn't work! :D I did learn that you can get javascript errors even on lines that are commented out, so that's something. 
+
+//So now, this has become something else entirely. You thought this was a weather app? Oh, no, my friend. This is something far better--it's a fun game, AND there's a prize! If you can find the issue and explain it to me in a way I'll understand, I'll bake you an extremely delicious cake. 
+
 //Setting up the API key and the initial city
 var apiKey = "7580a995f9e494f6242cd7f55176487d"; 
 //var city = document.getElementById("search-city");
@@ -7,11 +11,11 @@ var today = moment();
 $('.current-date').text(today.format('L'));
 
 //Setting up the element for the button
-var saveButonEl = $('.search-button')
+var saveButtonEl = $('.search-button')
 
 //This is the function to retrieve the current weather at the chosen city and also retrieves the lat and log
 function getWeatherData(){
-    var city = $('.search-city').val(); 
+    var city = atlanta //$('.search-city').val(); 
     var requestURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city.value + "&units=imperial&appid=" + apiKey
 
     console.log(requestURL); //adding these at every single step to see if it's working
@@ -83,4 +87,4 @@ function getWeatherData(){
  
 
 //making it all run on click
-saveButonEl.on('click', getWeatherData)
+saveButtonEl.on('click', getWeatherData)
