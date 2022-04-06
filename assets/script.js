@@ -79,7 +79,36 @@ function getWeatherData(){
                      console.log(" :)" , data)
 
                      //path is data.daily.[day number in arrar/index, start at 1]
+
+                     //setting up all the query selectors for every single card. Is there a more efficient way to do this with a loop? Probably! But I can't figure that out right now, so I'm doing a method that I know will work. 
+
+                     //day 1
                      document.querySelector('.card-temp-1').innerText += data.daily[1].temp.day;
+                     document.querySelector('.card-wind-1').innerText += data.daily[1].wind_speed;
+                     document.querySelector('.card-humidity-1').innerText += data.daily[1].humidity;
+
+
+                     //day 2
+                     document.querySelector('.card-temp-2').innerText += data.daily[2].temp.day;
+                     document.querySelector('.card-wind-2').innerText += data.daily[2].wind_speed;
+                     document.querySelector('.card-humidity-2').innerText += data.daily[2].humidity;
+
+                     //day 3
+                     document.querySelector('.card-temp-3').innerText += data.daily[3].temp.day;
+                     document.querySelector('.card-wind-3').innerText += data.daily[3].wind_speed;
+                     document.querySelector('.card-humidity-3').innerText += data.daily[3].humidity;
+
+
+                     //day 4
+                     document.querySelector('.card-temp-4').innerText += data.daily[4].temp.day;
+                     document.querySelector('.card-wind-4').innerText += data.daily[4].wind_speed;
+                     document.querySelector('.card-humidity-4').innerText += data.daily[4].humidity;
+
+                     //day 5
+                     document.querySelector('.card-temp-5').innerText += data.daily[5].temp.day;
+                     document.querySelector('.card-wind-5').innerText += data.daily[5].wind_speed;
+                     document.querySelector('.card-humidity-5').innerText += data.daily[5].humidity;
+
                     //putting the uv call in this same fetch
                     //this homework is very nested in on itself. I don't like it. Gotdang Hapsburg family tree over here. 
 
