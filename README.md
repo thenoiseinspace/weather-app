@@ -8,7 +8,7 @@ GitHub repo link: https://github.com/thenoiseinspace/weather-app
 Live deployment link: https://thenoiseinspace.github.io/weather-app
 
 Image (also in assets folder):
-<img src="https://github.com/thenoiseinspace/weather-app/blob/main/assets/screenshot.png">
+<img src="https://github.com/thenoiseinspace/weather-app/blob/main/assets/screenshot1.png">
 
 Acknowledgements: 
 
