@@ -15,8 +15,9 @@ var saveButtonEl = $('.search-button')
 
 //This is the function to retrieve the current weather at the chosen city and also retrieves the lat and log
 function getWeatherData(){
-    var city = atlanta //$('.search-city').val(); 
-    var requestURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city.value + "&units=imperial&appid=" + apiKey
+    var city = $('.search-city').val(); 
+        console.log(city); 
+    var requestURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey
 
     console.log(requestURL); //adding these at every single step to see if it's working
     
@@ -30,36 +31,42 @@ function getWeatherData(){
        
             var lat = sanitizedData.coord.lat;
             var lon = sanitizedData.coord.lon; 
-            console.log(lat); 
-            console.log(lon); 
+            //console.log("lat is", lat); 
+            //console.log(lon); 
 
                         //set these to text content, not variables 
                         //going through the nodes of the dom to find location
                     var cityName = sanitizedData.name;
                     var temperature = sanitizedData.main.temp; 
-                        console.log(temperature); 
+                        //console.log(temperature); 
                     var humidity = sanitizedData.main.humidity; 
-                        console.log(humidity);
+                        //console.log(humidity);
                     var wind = JSON.stringify(sanitizedData.wind.speed); 
-                        console.log("this is wind" + wind);
-                    var icon = data.weather[0].icon; 
+                       // console.log("this is wind" + wind);
+                       // console.log("this is sanitized", sanitizedData); 
+                    var icon = sanitizedData.weather[0].icon; 
+                       // console.log("this is icon" , icon); 
                     var todaysWeather = [cityName, temperature, humidity, wind, icon, lat, lon]
 
-                    console.log(todaysWeather); 
+                    //console.log(todaysWeather); 
 
                     //appending all of the values we just got into the text on the page
                     //Thank you to Travis for walking me through this part in office hours
-                    document.querySelector('.city').innerText = cityName; 
-                    document.querySelector('.main-temp').innerText = temperature + "degrees"; 
-                    document.querySelector('.main-wind').innerText = wind + "miles per hour"; 
-                    document.querySelector('.icon').src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+                    document.querySelector('.current-city').innerText += cityName; 
+                    document.querySelector('.main-temp').innerText += temperature + "degrees"; 
+                    document.querySelector('.main-wind').innerText += wind + "miles per hour"; 
+                    document.querySelector('.main-humidity').innerText += humidity; 
+                   // document.querySelector('.icon').innerHTML = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+                   //look up how to append an image iin js
                     
                     // var uvIndex = sanitizedData.main.uvi; 
                     //     console.log(uvIndex);
                     //var weatherIcon = sanitizedData.current.weather[0].icon; 
                         //console.log(weatherIcon);
 
-            var secondURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly&units=imperial&appid=" + apiKey
+            var secondURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly&appid=" + apiKey
+
+                console.log("this is second URL", secondURL); 
 
             //second fetch request
             //I'm nesting both fetch requests in the same function so they can use the same data
@@ -69,8 +76,10 @@ function getWeatherData(){
                     console.log(secondFetchResponse)
                     return secondFetchResponse.json()
                  }).then(function(data){
-                     console.log(data)
+                     console.log(" :)" , data)
 
+                     //path is data.daily.[day number in arrar/index, start at 1]
+                     document.querySelector('.card-temp-1').innerText += data.daily[1].temp.day;
                     //putting the uv call in this same fetch
                     //this homework is very nested in on itself. I don't like it. Gotdang Hapsburg family tree over here. 
 
