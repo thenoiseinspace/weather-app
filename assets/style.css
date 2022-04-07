@@ -1,12 +1,6 @@
-/* body{
-    display: flex; 
-} */
-/* 
-.search{
-    display: flex;
-    justify-content: left;
-    align-items: left;
-} */
+p{
+    font-size: large;
+}
 
 .header-card{
     background-image: linear-gradient(to right, blue,purple);
