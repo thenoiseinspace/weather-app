@@ -1,8 +1,5 @@
-//Setting up the API key and the initial city
+//Setting up the API key, linking libraries
 var apiKey = "7580a995f9e494f6242cd7f55176487d"; 
-//var city = document.getElementById("search-city");
-
-//Setting up moment to get the dates
 var today = moment(); 
 $('.current-date').text(today.format('L'));
 
@@ -75,27 +72,41 @@ function getWeatherData(){
                      //main uv
                      document.querySelector('.main-uv').innerText += data.daily[0].uvi;
 
+                     //fetching all the icons from the dom
                      var mainIcon = data.daily[0].weather[0].icon;
+                        console.log("i am todays icon" , mainIcon)
                      var day1Icon = data.daily[1].weather[0].icon;
+                        console.log("tomorrow icon" , day1Icon)
                      var day2Icon = data.daily[2].weather[0].icon;
                      var day3Icon = data.daily[3].weather[0].icon;
                      var day4Icon = data.daily[4].weather[0].icon;
                      var day5Icon = data.daily[5].weather[0].icon;
-                    
-                     //all the icons
-                     document.querySelector('.main-icon').innerHTML = "http://openweathermap.org/img/wn/" + mainIcon + "@2x.png";
 
-                    document.querySelector('.card-icon-1').innerHTML = "http://openweathermap.org/img/wn/" + day1Icon + "@2x.png";
+                    //setting the icon urls as variables to call later
+                     var mainIconImage = "http://openweathermap.org/img/wn/" + mainIcon + "@2x.png";
+                        console.log("i am the main icon url" , mainIconImage); 
+                     var day1Image = "http://openweathermap.org/img/wn/" + day1Icon + "@2x.png";
+                        console.log("i am the day 1 icon" , day1Image);
+                     var day2Image ="http://openweathermap.org/img/wn/" + day2Icon + "@2x.png";
+                     var day3Image = "http://openweathermap.org/img/wn/" + day3Icon + "@2x.png";
+                     var day4Image = "http://openweathermap.org/img/wn/" + day4Icon + "@2x.png";
+                     var day5Image = "http://openweathermap.org/img/wn/" + day5Icon + "@2x.png";
 
-                    document.querySelector('.card-icon-2').innerHTML = "http://openweathermap.org/img/wn/" + day2Icon + "@2x.png";
+                     //adding the newly generated icon images to the html
+                    document.querySelector('.main-icon').innerHTML = "<img src=" + mainIconImage + "></img>"; 
 
-                    document.querySelector('.card-icon-3').innerHTML = "http://openweathermap.org/img/wn/" + day3Icon + "@2x.png";
+                    document.querySelector('.card-icon-1').innerHTML = "<img src=" + day1Image + "></img>";
 
-                    document.querySelector('.card-icon-4').innerHTML = "http://openweathermap.org/img/wn/" + day4Icon + "@2x.png";
+                    document.querySelector('.card-icon-2').innerHTML = "<img src=" + day2Image + "></img>";
 
-                    document.querySelector('.card-icon-5').innerHTML = "http://openweathermap.org/img/wn/" + day5Icon + "@2x.png";
+                    document.querySelector('.card-icon-3').innerHTML = "<img src=" + day3Image + "></img>";
 
-                     //day 1
+                    document.querySelector('.card-icon-4').innerHTML = "<img src=" + day4Image + "></img>";
+
+                    document.querySelector('.card-icon-5').innerHTML = "<img src=" + day5Image + "></img>";
+
+                    //five day forecast cards 
+                    //day 1
                      document.querySelector('.card-temp-1').innerText += data.daily[1].temp.day;
                      document.querySelector('.card-wind-1').innerText += data.daily[1].wind_speed;
                      document.querySelector('.card-humidity-1').innerText += data.daily[1].humidity;
@@ -113,7 +124,6 @@ function getWeatherData(){
                      document.querySelector('.card-humidity-3').innerText += data.daily[3].humidity;
                      document.querySelector('.card-uv-3').innerText += data.daily[3].uvi;
 
-
                      //day 4
                      document.querySelector('.card-temp-4').innerText += data.daily[4].temp.day;
                      document.querySelector('.card-wind-4').innerText += data.daily[4].wind_speed;
@@ -127,8 +137,6 @@ function getWeatherData(){
                      document.querySelector('.card-uv-5').innerText += data.daily[5].uvi;
 
                     //putting the uv call in this same fetch
-                    //this homework is very nested in on itself. I don't like it. Gotdang Hapsburg family tree over here. 
-
                     var uvIndex = data.current.uvi; 
                     console.log(uvIndex);
 
