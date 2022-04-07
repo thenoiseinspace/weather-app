@@ -1,7 +1,3 @@
-//Hello and welcome to my code that does not work! :D I took as much of Travis' time in office hours as I could--it still doesn't work! :D I worked on this with my tutor--it still doesn't work! :D I spent countless hours working on this with the study group, who tried valiently to fix it--it still doesn't work! :D I did learn that you can get javascript errors even on lines that are commented out, so that's something. 
-
-//So now, this has become something else entirely. You thought this was a weather app? Oh, no, my friend. This is something far better--it's a fun game, AND there's a prize! If you can find the issue and explain it to me in a way I'll understand, I'll bake you an extremely delicious cake. 
-
 //Setting up the API key and the initial city
 var apiKey = "7580a995f9e494f6242cd7f55176487d"; 
 //var city = document.getElementById("search-city");
@@ -34,8 +30,8 @@ function getWeatherData(){
             //console.log("lat is", lat); 
             //console.log(lon); 
 
-                        //set these to text content, not variables 
-                        //going through the nodes of the dom to find location
+                    //set these to text content, not variables 
+                    //going through the nodes of the dom to find location
                     var cityName = sanitizedData.name;
                     var temperature = sanitizedData.main.temp; 
                         //console.log(temperature); 
@@ -51,22 +47,12 @@ function getWeatherData(){
                     var uvIndex = sanitizedData.main.uvi; 
                          console.log("uv is" , uvIndex);
 
-                    //console.log(todaysWeather); 
-
                     //appending all of the values we just got into the text on the page
                     //Thank you to Travis for walking me through this part in office hours
                     document.querySelector('.current-city').innerText += cityName; 
                     document.querySelector('.main-temp').innerText += temperature + "degrees"; 
                     document.querySelector('.main-wind').innerText += wind + "miles per hour"; 
                     document.querySelector('.main-humidity').innerText += humidity; 
-                
-                   // document.querySelector('.icon').innerHTML = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-                   //look up how to append an image iin js
-                    
-                    // var uvIndex = sanitizedData.main.uvi; 
-                    //     console.log(uvIndex);
-                    //var weatherIcon = sanitizedData.current.weather[0].icon; 
-                        //console.log(weatherIcon);
 
             var secondURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly&appid=" + apiKey
 
@@ -88,13 +74,32 @@ function getWeatherData(){
 
                      //main uv
                      document.querySelector('.main-uv').innerText += data.daily[0].uvi;
-                     
+
+                     var mainIcon = data.daily[0].weather[0].icon;
+                     var day1Icon = data.daily[1].weather[0].icon;
+                     var day2Icon = data.daily[2].weather[0].icon;
+                     var day3Icon = data.daily[3].weather[0].icon;
+                     var day4Icon = data.daily[4].weather[0].icon;
+                     var day5Icon = data.daily[5].weather[0].icon;
+                    
+                     //all the icons
+                     document.querySelector('.main-icon').innerHTML = "http://openweathermap.org/img/wn/" + mainIcon + "@2x.png";
+
+                    document.querySelector('.card-icon-1').innerHTML = "http://openweathermap.org/img/wn/" + day1Icon + "@2x.png";
+
+                    document.querySelector('.card-icon-2').innerHTML = "http://openweathermap.org/img/wn/" + day2Icon + "@2x.png";
+
+                    document.querySelector('.card-icon-3').innerHTML = "http://openweathermap.org/img/wn/" + day3Icon + "@2x.png";
+
+                    document.querySelector('.card-icon-4').innerHTML = "http://openweathermap.org/img/wn/" + day4Icon + "@2x.png";
+
+                    document.querySelector('.card-icon-5').innerHTML = "http://openweathermap.org/img/wn/" + day5Icon + "@2x.png";
+
                      //day 1
                      document.querySelector('.card-temp-1').innerText += data.daily[1].temp.day;
                      document.querySelector('.card-wind-1').innerText += data.daily[1].wind_speed;
                      document.querySelector('.card-humidity-1').innerText += data.daily[1].humidity;
                      document.querySelector('.card-uv-1').innerText += data.daily[1].uvi;
-
 
                      //day 2
                      document.querySelector('.card-temp-2').innerText += data.daily[2].temp.day;
@@ -128,13 +133,9 @@ function getWeatherData(){
                     console.log(uvIndex);
 
                     document.querySelector('.uv').innerText = uvIndex; 
-
-
                  })
-        
          })
         }
  
-
 //making it all run on click
 saveButtonEl.on('click', getWeatherData)
