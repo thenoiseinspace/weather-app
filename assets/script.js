@@ -59,6 +59,7 @@ function getWeatherData(){
                     document.querySelector('.main-temp').innerText += temperature + "degrees"; 
                     document.querySelector('.main-wind').innerText += wind + "miles per hour"; 
                     document.querySelector('.main-humidity').innerText += humidity; 
+                
                    // document.querySelector('.icon').innerHTML = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
                    //look up how to append an image iin js
                     
@@ -85,6 +86,9 @@ function getWeatherData(){
 
                      //setting up all the query selectors for every single card. Is there a more efficient way to do this with a loop? Probably! But I can't figure that out right now, so I'm doing a method that I know will work. 
 
+                     //main uv
+                     document.querySelector('.main-uv').innerText += data.daily[0].uvi;
+                     
                      //day 1
                      document.querySelector('.card-temp-1').innerText += data.daily[1].temp.day;
                      document.querySelector('.card-wind-1').innerText += data.daily[1].wind_speed;
