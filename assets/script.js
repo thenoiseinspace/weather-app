@@ -2,14 +2,26 @@
 var apiKey = "7580a995f9e494f6242cd7f55176487d"; 
 var today = moment(); 
 $('.current-date').text(today.format('L'));
+var cityArray = []; 
 
-//Setting up the element for the button
+//Setting up the element for the button, variables 
 var saveButtonEl = $('.search-button')
+// var city = $('.search-city').val(); 
+
+//     localStorage.setItem("formerCity",  )
 
 //This is the function to retrieve the current weather at the chosen city and also retrieves the lat and log
-function getWeatherData(){
-    var city = $('.search-city').val(); 
+var getWeatherData = function (){
+    //var city = $('.search-city').val(); 
         console.log(city); 
+        var city = $('.search-city').val(); 
+ 
+    cityArray.push(city);
+    //localStorage.setItem("formerCity", city);
+    localStorage.setItem("allCities", cityArray); 
+
+    //document.querySelector('.previous-cities').innerText = cityArray; 
+
     var requestURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey
 
     console.log(requestURL); //adding these at every single step to see if it's working
@@ -143,7 +155,19 @@ function getWeatherData(){
                     document.querySelector('.uv').innerText = uvIndex; 
                  })
          })
+       
+
+         
+
         }
  
 //making it all run on click
 saveButtonEl.on('click', getWeatherData)
+
+localStorage.getItem("allCities"); 
+document.querySelector('.previous-cities').innerText = cityArray; 
+
+
+//local storage - set item and get item
+
+
