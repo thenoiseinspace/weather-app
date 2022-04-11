@@ -13,14 +13,14 @@ var saveButtonEl = $('.search-button')
 //This is the function to retrieve the current weather at the chosen city and also retrieves the lat and log
 var getWeatherData = function (){
     //var city = $('.search-city').val(); 
-        console.log(city); 
         var city = $('.search-city').val(); 
+        console.log(city); 
  
     cityArray.push(city);
     //localStorage.setItem("formerCity", city);
     localStorage.setItem("allCities", cityArray); 
 
-    //document.querySelector('.previous-cities').innerText = cityArray; 
+    document.querySelector('.previous-cities').innerText = cityArray; 
 
     var requestURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey
 
@@ -58,10 +58,10 @@ var getWeatherData = function (){
 
                     //appending all of the values we just got into the text on the page
                     //Thank you to Travis for walking me through this part in office hours
-                    document.querySelector('.current-city').innerText += cityName; 
-                    document.querySelector('.main-temp').innerText += temperature + "degrees"; 
-                    document.querySelector('.main-wind').innerText += wind + "miles per hour"; 
-                    document.querySelector('.main-humidity').innerText += humidity; 
+                    document.querySelector('.current-city').innerText = cityName; 
+                    document.querySelector('.main-temp').innerText = temperature + "degrees"; 
+                    document.querySelector('.main-wind').innerText = wind + "miles per hour"; 
+                    document.querySelector('.main-humidity').innerText = humidity; 
 
             var secondURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly&appid=" + apiKey
 
@@ -119,34 +119,34 @@ var getWeatherData = function (){
 
                     //five day forecast cards 
                     //day 1
-                     document.querySelector('.card-temp-1').innerText += data.daily[1].temp.day;
-                     document.querySelector('.card-wind-1').innerText += data.daily[1].wind_speed;
-                     document.querySelector('.card-humidity-1').innerText += data.daily[1].humidity;
-                     document.querySelector('.card-uv-1').innerText += data.daily[1].uvi;
+                     document.querySelector('.card-temp-1').innerText = data.daily[1].temp.day;
+                     document.querySelector('.card-wind-1').innerText = data.daily[1].wind_speed;
+                     document.querySelector('.card-humidity-1').innerText = data.daily[1].humidity;
+                     document.querySelector('.card-uv-1').innerText = data.daily[1].uvi;
 
                      //day 2
-                     document.querySelector('.card-temp-2').innerText += data.daily[2].temp.day;
-                     document.querySelector('.card-wind-2').innerText += data.daily[2].wind_speed;
-                     document.querySelector('.card-humidity-2').innerText += data.daily[2].humidity;
-                     document.querySelector('.card-uv-2').innerText += data.daily[2].uvi;
+                     document.querySelector('.card-temp-2').innerText = data.daily[2].temp.day;
+                     document.querySelector('.card-wind-2').innerText = data.daily[2].wind_speed;
+                     document.querySelector('.card-humidity-2').innerText = data.daily[2].humidity;
+                     document.querySelector('.card-uv-2').innerText = data.daily[2].uvi;
 
                      //day 3
-                     document.querySelector('.card-temp-3').innerText += data.daily[3].temp.day;
-                     document.querySelector('.card-wind-3').innerText += data.daily[3].wind_speed;
-                     document.querySelector('.card-humidity-3').innerText += data.daily[3].humidity;
-                     document.querySelector('.card-uv-3').innerText += data.daily[3].uvi;
+                     document.querySelector('.card-temp-3').innerText = data.daily[3].temp.day;
+                     document.querySelector('.card-wind-3').innerText = data.daily[3].wind_speed;
+                     document.querySelector('.card-humidity-3').innerText = data.daily[3].humidity;
+                     document.querySelector('.card-uv-3').innerText = data.daily[3].uvi;
 
                      //day 4
-                     document.querySelector('.card-temp-4').innerText += data.daily[4].temp.day;
-                     document.querySelector('.card-wind-4').innerText += data.daily[4].wind_speed;
-                     document.querySelector('.card-humidity-4').innerText += data.daily[4].humidity;
-                     document.querySelector('.card-uv-4').innerText += data.daily[4].uvi;
+                     document.querySelector('.card-temp-4').innerText = data.daily[4].temp.day;
+                     document.querySelector('.card-wind-4').innerText = data.daily[4].wind_speed;
+                     document.querySelector('.card-humidity-4').innerText = data.daily[4].humidity;
+                     document.querySelector('.card-uv-4').innerText = data.daily[4].uvi;
 
                      //day 5
-                     document.querySelector('.card-temp-5').innerText += data.daily[5].temp.day;
-                     document.querySelector('.card-wind-5').innerText += data.daily[5].wind_speed;
-                     document.querySelector('.card-humidity-5').innerText += data.daily[5].humidity;
-                     document.querySelector('.card-uv-5').innerText += data.daily[5].uvi;
+                     document.querySelector('.card-temp-5').innerText = data.daily[5].temp.day;
+                     document.querySelector('.card-wind-5').innerText = data.daily[5].wind_speed;
+                     document.querySelector('.card-humidity-5').innerText = data.daily[5].humidity;
+                     document.querySelector('.card-uv-5').innerText = data.daily[5].uvi;
 
                     //putting the uv call in this same fetch
                     var uvIndex = data.current.uvi; 
@@ -165,9 +165,10 @@ var getWeatherData = function (){
 saveButtonEl.on('click', getWeatherData)
 
 localStorage.getItem("allCities"); 
-document.querySelector('.previous-cities').innerText = cityArray; 
+
 
 
 //local storage - set item and get item
 
 
+//location of get, parse array, dom manipulation
